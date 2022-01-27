@@ -16,8 +16,12 @@ document.getElementById("count-el").innerHTML = count;
 // console.log("The thumps up button was clicked!")
 }
 
-function save (){
+function save() {
 
-    console.log(count);
+    document.getElementById("save-el").innerHTML += "-" + count;
 }
+
+// From the console we can checkout if we have grabbed the correct element.
+// Instead of writing these codes together we could have made objects for these codes which 
+// will help in giving short reference to understand.
 
