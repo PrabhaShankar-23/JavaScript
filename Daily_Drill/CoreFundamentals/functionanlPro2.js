@@ -1,5 +1,5 @@
 // Here we using the DRY principle for implementing the same login in better manner.
-
+console.time("❤️");
 const radius = [2, 3, 4, 5, 6, 7, 8, 9];
 
 const area = function (radius) {
@@ -29,3 +29,18 @@ const calculate = function (radius, logic) {
 console.log(calculate(radius, area));
 console.log(calculate(radius, diameter));
 console.log(calculate(radius, circumference));
+console.timeEnd("❤️");
+
+// Same thing we are writing in prototype form.
+Array.prototype.calc = function (logic) {
+  const output = [];
+
+  for (let i = 0; i < this.length; i++) {
+    output.push(logic(this[i]));
+  }
+
+  return output;
+};
+
+console.log(radius.map(area));
+console.log(radius.calc(area));
