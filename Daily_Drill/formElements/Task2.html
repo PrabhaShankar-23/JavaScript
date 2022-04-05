@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task2</title>
+  </head>
+  <body>
+    <script>
+      function showInput() {
+        let count = 0;
+        function counter() {
+          let txt = document.getElementById("fname").value;
+
+          for (let i = 0; i < txt.length; i++) {
+            txt.charAt(i) === " " ? count : count++;
+          }
+        }
+
+        counter();
+
+        // 1st sentence
+        let first =
+          "My Name is " + " " + document.getElementById("fname").value;
+        document.getElementById("name").innerHTML = first.toUpperCase();
+
+        //   2 nd sentence
+        let two = " I like" + " " + document.getElementById("fsport").value;
+        document.getElementById("Sport").innerHTML = two.toLowerCase();
+        //   3 rd sentence
+        document.getElementById("noName").innerHTML =
+          "Your name has " + " " + count + " " + " no of characters.";
+
+        //   4th sentence
+        document.getElementById("message").innerHTML =
+          document.getElementById("fname").value +
+          " " +
+          "is having" +
+          " " +
+          document.getElementById("fsport").value +
+          " on" +
+          " " +
+          document.getElementById("fday").value;
+      }
+    </script>
+    <form action="">
+      <label for="fname">Enter Name</label> <br />
+      <input type="text" id="fname" name="fname" /> <br />
+      <label for="fsport">Enter Sport</label> <br />
+      <input type="text" id="fsport" name="fsport" /> <br />
+      <label for="fday">Enter Day </label> <br />
+      <input type="text" id="fday" name="fday" /> <br />
+      <br />
+      <button type="button" onclick="showInput()">Create Sentence</button>
+    </form>
+    <br />
+    <br />
+    <div id="name"></div>
+    <br />
+    <br />
+    <div id="Sport"></div>
+    <br />
+    <br />
+    <div id="noName"></div>
+    <br />
+    <br />
+    <div id="message"></div>
+    <br />
+    <br />
+  </body>
+</html>
