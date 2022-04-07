@@ -1,22 +1,26 @@
-/* ======================== 1============================ */
+/* ======================== truthy vs falsy values============================ */
 
-console.log(!!Infinity);
-console.log(!!"0");
-console.log(!!0);
-console.log(!![]);
-console.log(!!false);
-console.log(!!NaN);
-console.log(!!"");
-console.log(!!false);
+// console.log(!!Infinity);
+// console.log(!!"0");
+// console.log(!!0);
+// console.log(!![]);
+// console.log(!!false);
+// console.log(!!NaN);
+// console.log(!!"");
+// console.log(!!false);
 /* ======================== 1============================ */
-console.log(!!(0 === "0"));
-console.log(!!0n);
+// console.log(!!(0 === "0"));
+// console.log(!!0n);
 
-/* ======================== 1============================ */
-console.log(!!null);
-console.log(!!undefined);
+/* ======================== null vs undefined============================ */
+// console.log(!!null);
+// console.log(!!undefined);
 
-/* ======================== 1============================ */
+/* ======================== ============================ */
+let a = null;
+console.log(a);
+let b;
+console.log(b);
 
 /* ======================== 1============================ */
 
