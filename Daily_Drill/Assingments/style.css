@@ -1,0 +1,30 @@
+
+
+/* input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+} */
+
+body {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+    height: 100vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+p {
+
+display: flex;
+margin: 0 auto;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+

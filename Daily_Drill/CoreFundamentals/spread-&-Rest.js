@@ -93,6 +93,8 @@ let arr4 = [1, 1, 1, 2, 2, 3, 3, 4];
 console.log(new Set(arr4));
 let newset = [...new Set(arr4)];
 console.log(newset);
-/* =====================It is really confusing when you would call an (…) this as spread and rest. We call this rest when we call parameters of any number in a function. Other than that it is spread operator. 🔥Together they help to travel an iterable. And that is the similarity of these two. ===================== */
+/* =====================It is really confusing when you would call an (…) this as spread and rest. We call this rest when we call parameters of any number in a function. Other than that it is spread operator. 
+
+🔥Together they help to travel an iterable. And that is the similarity of these two. ===================== */
 
 /* ===================== ===================== */

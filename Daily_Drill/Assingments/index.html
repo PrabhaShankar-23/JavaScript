@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html</title>
+
+    <style>
+      .note {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="one">Hello</p>
+    <hr />
+    <span class="note">Tokyo</span>
+    <span class="note">New York</span>
+    <span id="two">Delhi</span>
+    <hr />
+
+    <div class="parent" id="parent">
+      <div class="child"><p>Small bear</p></div>
+      <div class="child"><p>small bear</p></div>
+    </div>
+    <hr />
+
+    <div class="divs" id="green">
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <script>
+      //  class dom : Look here we are manipulating the class of element with id two.
+      document.getElementById("two").classList.add("note");
+      // Id selector manipulated for changing the dom.
+      document.getElementById("one").innerHTML = "Id Selector Implemented.";
+
+      //   Attribute selector for font color in the same id
+      document.getElementById("one").style.color = "red";
+
+      //   child selector to manipulate dom by using children property
+      document.getElementById("parent").children[1].innerHTML = "Rowdy Bear";
+
+      // Group selection based on id & class
+
+      document.getElementById("green").style.color = "red";
+    </script>
+  </body>
+</html>

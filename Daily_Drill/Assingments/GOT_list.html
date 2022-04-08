@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Song of Ice & Fire🔥🐺</title>
+</head>
+<body>
+
+
+<h1>A few of the Game of Thrones characters</h1>
+ <form>
+    <label for="house">House:</label>
+    <select  name="house" id="house">
+    <option value="XX" selected>Select a house</option>
+    <option  value="ST">Stark</option>
+    <option value="LA">Lannister</option>
+    <option value="BA">Baratheon</option>
+    <option value="TA">Targaryen</option>
+    </select>
+   
+  </form>
+   <br>
+   <br>
+   <input onclick="houseSelection()" type="button" value="Submit">
+  <!-- <button type="button" onclick="houseSelection()"> List Charaters </button> -->
+ <p >
+  <ul id="characters" ></ul>
+ </p>
+       <script>
+           let houseKey
+           function houseSelection() {  
+
+              // we are selecting the particular element in the drop down box & then we are getting characters from the list provided.
+               let v = document.getElementById("house");
+               houseKey = v.value;
+               characterData = getCharacters(houseKey);
+
+              //  This clears the list in the next loop.
+               let ul = document.getElementById("characters");
+               ul.innerHTML= "";
+                // Items to add in the from the list.
+               addList();
+               function addList() {
+                    for(let i = 0; i< characterData.length; i++) {
+                      var char = document.createElement("li");
+                      char.appendChild(document.createTextNode(characterData[i]));
+                      ul.appendChild(char);
+                      console.log(char);
+                    }
+                  
+               }
+               
+          }
+          
+            // Character list. Each house has a name and a code
+            const houses = [
+            {
+            code: "ST",
+            name: "Stark"
+            },
+            {
+            code: "LA",
+            name: "Lannister"
+            },
+            {
+            code: "BA",
+            name: "Baratheon"
+            },
+            {
+            code: "TA",
+            name: "Targaryen"
+            }
+            ];
+            // Return an array of characters belonging to a house
+            const getCharacters = houseCode => {
+            switch (houseCode) {
+            case "ST":
+            return ["Eddard", "Catelyn", "Robb", "Sansa", "Arya", "Jon Snow"];
+            case "LA":
+            return ["Tywin", "Cersei", "Jaime", "Tyrion"];
+            case "BA":
+            return ["Robert", "Stannis", "Renly"];
+            case "TA":
+            return ["Aerys", "Daenerys", "Viserys"];
+            default:
+            return []; // Empty array
+            }
+            };
+    </script>
+</body>
+</html> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
