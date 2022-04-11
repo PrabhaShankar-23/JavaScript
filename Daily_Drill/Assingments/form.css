@@ -1,0 +1,44 @@
+
+:root{--themeColor : #008CBA;
+}
+
+h1 {
+    color:var(--themeColor);
+    text-align: center;
+    }
+ body {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }   
+
+h3 {
+    color: var(--themeColor);
+    font-weight: bolder;
+}
+
+.forms {
+    display: flex; 
+    border: 50px;
+}
+
+.forms--section {
+    width: 14rem;
+    height: 16rem;
+    margin: 2rem 1rem;
+    background-color: rgb(188, 235, 219);
+    margin: auto 2rem;
+    padding: 1.75rem;
+    border-radius: 1rem;
+}
+
+.btn {
+    color: white;
+    background-color: var(--themeColor);
+    padding: .2rem 1rem;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    border-radius: .24rem;
+   
+}

@@ -15,12 +15,11 @@
     <label for="house">House:</label>
     <select  name="house" id="house">
     <option value="XX" selected>Select a house</option>
-    <option  value="ST">Stark</option>
+    <option value="ST">Stark</option>
     <option value="LA">Lannister</option>
     <option value="BA">Baratheon</option>
     <option value="TA">Targaryen</option>
     </select>
-   
   </form>
    <br>
    <br>
@@ -33,7 +32,8 @@
            let houseKey
            function houseSelection() {  
 
-              // we are selecting the particular element in the drop down box & then we are getting characters from the list provided.
+              // we are selecting the particular element in the drop down box & then we are 
+              // getting characters from the list provided.
                let v = document.getElementById("house");
                houseKey = v.value;
                characterData = getCharacters(houseKey);
@@ -41,17 +41,27 @@
               //  This clears the list in the next loop.
                let ul = document.getElementById("characters");
                ul.innerHTML= "";
-                // Items to add in the from the list.
-               addList();
-               function addList() {
-                    for(let i = 0; i< characterData.length; i++) {
-                      var char = document.createElement("li");
-                      char.appendChild(document.createTextNode(characterData[i]));
-                      ul.appendChild(char);
-                      console.log(char);
-                    }
+                // Items to add from the list.
+
+              //  Method II
+              characterData.forEach(element => {
+                let person = document.createElement('li');
+                person.appendChild(document.createTextNode(element));
+                ul.appendChild(person);
+                
+              });
+
+              // Method I
+              //  addList();
+              //  function addList() {
+              //       for(let i = 0; i< characterData.length; i++) {
+              //         var char = document.createElement("li");
+              //         char.appendChild(document.createTextNode(characterData[i]));
+              //         ul.appendChild(char);
+              //         console.log(char);
+              //       }
                   
-               }
+               
                
           }
           
