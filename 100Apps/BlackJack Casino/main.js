@@ -22,6 +22,7 @@ function startGame() {
   card1 = Math.ceil(Math.random() * 10 + 1);
   card2 = Math.ceil(Math.random() * 10 + 1);
   sum = card1 + card2;
+  
   if (sum <= 20) {
     message = "Do you want to draw New card? If 'yes' then press New Card!";
     messageEl.textContent = message;

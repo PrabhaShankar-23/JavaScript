@@ -18,7 +18,9 @@ document.getElementById("count-el").innerHTML = count;
 
 function save() {
 
-    document.getElementById("save-el").innerHTML += "-" + count;
+    document.getElementById("save-el").textContent += count + " - "  ;
+    document.getElementById("count-el").innerHTML = 0;
+    count =0;
 }
 
 // From the console we can checkout if we have grabbed the correct element.
