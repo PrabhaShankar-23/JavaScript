@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pizza cruchy chessey store</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-family: popins;
+        font-size: 1em;
+      }
+      #container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        padding: 10px;
+        background-color: hsla(62, 76%, 55%, 0.941);
+        color: azure;
+      }
+
+      label {
+        display: inline-block; /* for recognizing the width */
+        width: 90px; /* for right alignment */
+        text-align: right;
+        padding-right: 10px;
+        font-weight: bold;
+      }
+      label,
+      input,
+      button {
+        margin: 10px 2px; /* 10 top/bottom, 2 left/right */
+      }
+      #extras input {
+        margin-left: 110px; /* to left align with name, qty */
+      }
+      #extras label {
+        display: inline; /* remove width restriction*/
+      }
+
+      /* button section */
+      button {
+        font-size: 1.5em;
+        border-radius: 2rem;
+        height: 2em;
+        width: 150px;
+        padding: 0.25em;
+        margin-left: 110px;
+        border: 2px solid hsl(355, 82%, 49%);
+        background-color: rgb(251, 172, 152);
+        color: rgb(8, 8, 229); /* text */
+      }
+      button:hover {
+        /*for  swapping text & background */
+        background-color: rgb(203, 48, 201);
+        color: rgb(251, 152, 178);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <fieldset id="container">
+        <div>
+          <h2>Pizza orders</h2>
+          <p>
+            Freshly baked pizza to satisfy your soul with extra cheese for
+            orders above certain Quantity. Fresh tomatoes, oregano & jalpaneo.
+          </p>
+          <div>
+            <label for="bgcolor">Cherry Red</label>
+            <input
+              onclick="changebackground()"
+              type="radio"
+              name="backgroundColor"
+              id="bgcolor"
+              value="#D2042D"
+            /><br />
+
+            <label for="bgcolor">Magenta</label>
+            <input
+              onclick="changebackground()"
+              type="radio"
+              name="backgroundColor"
+              id="bgcolor"
+              value="#FF00FF"
+            /><br />
+
+            <label for="bgcolor">Green</label>
+            <input
+              onclick="changebackground()"
+              type="radio"
+              name="backgroundColor"
+              id="bgcolor"
+              value="#12AD2B"
+            /><br />
+
+            <label for="name">Name:</label>
+            <input
+              onclick="clearDetails()"
+              type="text"
+              name="name"
+              id="name"
+            /><br />
+            <label for="name">E-Mail:</label>
+            <input
+              onclick="clearDetails()"
+              type="email"
+              name="email"
+              id="email"
+              pattern="[^ @]*@[^ @]*"
+              placeholder="SuperManReturns@solarSystem.com"
+            /><br />
+
+            <div id="extras">
+              <input
+                class="check"
+                onclick="clearDetails()"
+                type="checkbox"
+                name="supreme"
+                id="Super"
+                value="Yes"
+              />
+              <label for="crunch">Supreme (15$)</label><br />
+              <input
+                class="check2"
+                onclick="clearDetails()"
+                type="checkbox"
+                name="cheese"
+                id="cheese"
+                value="Yes"
+              />
+              <label for="cheese">Cheese (10$)</label>
+            </div>
+            <button type="button" onclick="orderDetails()">Place Order</button>
+          </div>
+          <!-- look we have put maxlength criteria for the form -->
+          <legend>Feedback</legend>
+          <textarea
+            name="feedback"
+            id="feedback"
+            cols="30"
+            rows="10"
+            maxlength="100"
+          ></textarea>
+          <p id="output"></p>
+        </div>
+      </fieldset>
+    </form>
+    <script>
+      let order = document.getElementById("output");
+      //   price of pizza options.
+      const Supreme = 15;
+      const cheese = 10;
+
+      function orderDetails() {
+        let finalPizaaPrice = 0;
+        // for adding the reqired values from the order as per the checkbox status
+        // You can add such more combinations for the required value for insertng the more options.
+
+        let Supremechoice = document.querySelector(".check").checked;
+        let cheeseChoice = document.querySelector(".check2").checked;
+        if (Supremechoice) {
+          finalPizaaPrice = finalPizaaPrice + Supreme;
+        }
+        if (cheeseChoice) {
+          finalPizaaPrice = finalPizaaPrice + cheese;
+        }
+
+        const name = document.getElementById("name").value;
+        order.innerHTML =
+          " Order details for " +
+          name +
+          "<br>" +
+          "<br>" +
+          "<br>" +
+          "Total," +
+          finalPizaaPrice.toFixed(2) +
+          " $";
+
+        // changing or clearing out the final order details.
+      }
+      function clearDetails() {
+        order.innerHTML = "";
+      }
+      // function to change the background of the form image.
+      function changebackground() {
+        //   selecting the value of checked box where we have put the values of the form.
+        let bgcolor = document.querySelector(
+          `input[type="radio"][name=backgroundColor]:checked`
+        ).value;
+
+        // Setting the value to the background color.
+        document.getElementById("container").style.backgroundColor = bgcolor;
+      }
+    </script>
+  </body>
+</html>
