@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cool band T-shirt store⚡</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 1em;
+        align-content: center;
+      }
+      #container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        padding: 10px;
+        background-color: hsl(218, 81%, 56%);
+        color: azure;
+        justify-content: center;
+      }
+
+      label {
+        display: inline-block;
+        /* for recognizing the width */
+        width: 90px;
+        /* for right alignment */
+        text-align: right;
+        padding-right: 10px;
+        font-weight: bold;
+      }
+      label,
+      input,
+      button {
+        margin: 10px 2px; 
+      }
+      #extras input {
+       
+        margin-left: 110px;
+      }
+      #extras label {
+        display: inline;
+      }
+
+      /* button design section */
+      button {
+        font-size: 1.25em;
+        border-radius: 1.5rem;
+        height: 2em;
+        width: 150px;
+        padding: 0.25em;
+        margin-left: 110px;
+        border: 2px solid hsl(60, 88%, 49%);
+        background-color: rgb(251, 172, 152);
+        color: rgb(227, 231, 192); /* text */
+      }
+      button:hover {
+        /*for interchange of text & background */
+        background-color: rgb(243, 11, 11);
+        color: rgb(240, 239, 240);
+      }
+      /* Note here we are having flex direction of elemnents in header as well as unordered list.
+      So they have been shared together */
+      header,
+      ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        background-image: radial-gradient(red, yellow, green);
+        justify-content: center;
+      }
+      li {
+        padding: auto;
+        margin: 1rem;
+      }
+
+      #logo {
+        height: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="./yoo bro tshirt image.png" id="logo" alt="cool t" />
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Tshirt printing Story</li>
+        </ul>
+      </nav>
+    </header>
+    <form action="">
+      <fieldset id="container">
+        <div>
+          <h2 style="color: chartreuse">T-Shirt final order</h2>
+          <p>
+            Get your own custom design of T-shirts from experts in design. Who
+            know their products better as they do printing too.
+          </p>
+          <div><img src="./Tshirt.png" alt="" /></div>
+          <div>
+            <h4>Your custome order as per the design choosen. One Tshirt 20$(base price). </h4>
+            <label for="name">Name:</label>
+            <input
+              onclick="clearDetails()"
+              type="text"
+              name="name"
+              id="name"
+            /><br />
+            <label for="name">E-Mail:</label>
+            <input
+              onclick="clearDetails()"
+              type="email"
+              name="email"
+              id="email"
+              pattern="[^ @]*@[^ @]*"
+              placeholder="enter@user.com"
+            /><br />
+             <label for="qty">Quantity:</label>
+        <input
+          onclick="clearDetails()"
+          type="number"
+          name="qty"
+          id="qty"
+          min="1"
+          max="20"
+          value="2"
+        /><br />
+
+            <div id="extras">
+              <input
+                class="check"
+                onclick="clearDetails()"
+                type="checkbox"
+                name="supreme"
+                id="Super"
+                value="Yes"
+              />
+              <label for="lazer">lazer print (10$)</label><br />
+              <input
+                class="check2"
+                onclick="clearDetails()"
+                type="checkbox"
+                name="delivery"
+                id="delivery"
+                value="Yes"
+              />
+              <label for="delivery">Delivery in 24 hrs (5$)</label>
+            </div>
+            <!-- event listen -->
+            <button type="button" onclick="orderDetails()">Place Order</button>
+            <button type="submit" ()">Reset</button>
+          </div>
+          
+          <legend>Feedback</legend>
+          <br />
+          <textarea
+            name="feedback"
+            id="feedback"
+            cols="30"
+            rows="10"
+            maxlength="250"
+          >
+          </textarea>
+          <p id="output"></p>
+        </div>
+      </fieldset>
+    </form>
+    <script>
+        // let used
+      let order = document.getElementById("output");
+    // const used  
+      const lazer = 10;
+      const delivery = 5;
+// loop used
+      function orderDetails() {
+        let TotalTshirtPrice = 0;
+// event listener
+        let lazerchoice = document.querySelector(".check").checked;
+        let DeliveryChoice = document.querySelector(".check2").checked;
+        // if else or if used.
+        //Boolean used here 
+        if ( Boolean(lazerchoice) ) {
+            // arithmatic opertaion used
+          TotalTshirtPrice = TotalTshirtPrice + lazer;
+        }
+        if ( Boolean(DeliveryChoice)  ) {
+          TotalTshirtPrice = TotalTshirtPrice + delivery;
+        }
+         let qty = document.getElementById("qty").value;
+        const name = document.getElementById("name").value;
+        // string operation used below in concatenation
+        order.innerHTML =
+          " Order details for " +
+          name +
+          "<br>" +
+          "<br>" +
+          "<br>" +
+          "Total," + 
+        //   for calculating price of all t-shirts
+        (( TotalTshirtPrice +20)*qty) .toFixed(2) +
+          " $";
+        // for returning the alert
+        alert(`Congratulations ! ${name} your order has been placed`);
+        }
+        // To clear out  all details
+      function clearDetails() {
+        order.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
