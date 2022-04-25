@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATL Club Rocks!!!</title>
+    <!-- https://github.com/oshgodage/JavaScript-Crud-Operation -->
+
+    <!-- sample form code  -->
+    <style>
+      .container {
+        overflow: hidden;
+      }
+      .tab {
+        float: left;
+      }
+
+      .tab-2 input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      tr {
+        transition: all 0.25s ease-in-out;
+        border-bottom: 1px solid #c6f138;
+      }
+      tr:hover {
+        background-color: hsl(0, 83%, 72%);
+        cursor: pointer;
+      }
+
+      table {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      table,
+      tr,
+      td {
+        border: 1px solid rgb(67, 134, 222);
+        border-collapse: collapse;
+      }
+      header {
+        display: flex;
+        max-width: 50rem;
+      }
+
+      .page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        align-items: center;
+      }
+      main {
+        margin-bottom: 2rem;
+      }
+
+      .update_inputs {
+        display: flex;
+
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img src="./Atl logo.png" alt="" />
+        <h1>AtL Club</h1>
+      </header>
+      <main>
+        <div>
+          <button>Register</button>
+          <button>Admin Dashboard</button>
+          <button>Member Login</button>
+        </div>
+
+        <table id="table">
+          <tr>
+            <th>Date</th>
+            <th>ID-Number</th>
+            <th>Activity</th>
+            <th>Edit/Delete</th>
+          </tr>
+          <tr>
+            <td>23/12/2050</td>
+            <td>B1</td>
+            <td>Yoga</td>
+            <td>
+              <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+              <button onclick="removeSelectedRow();">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>23/12/2050</td>
+            <td>B3</td>
+            <td>Yoga</td>
+            <td>
+              <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+              <button onclick="removeSelectedRow();">Delete</button>
+            </td>
+          </tr>
+        </table>
+        <div class="update_1">
+          <div class="update_inputs">
+            <label for="dateEntered">Date</label>
+            <label for="IDNo">ID-Number</label>
+            <label for="activity">Activity</label>
+          </div>
+
+          <br />
+          <br />
+          <input type="text" name="dateEntered" id="dateEntered" />
+          <input type="number" name="IDNo" id="IDNo" />
+          <input type="text" name="activity" id="activity" />
+          <br />
+          <br />
+          <button onclick="addHtmlTableRow();">Add</button>
+        </div>
+
+        <script>
+          var rIndex,
+            table = document.getElementById("table");
+
+          // check the empty input
+          function checkEmptyInput() {
+            var isEmpty = false,
+              dateEntered = document.getElementById("dateEntered").value,
+              IDNo = document.getElementById("IDNo").value,
+              activity = document.getElementById("activity").value;
+
+            if (dateEntered === "") {
+              alert("First Name Connot Be Empty");
+              isEmpty = true;
+            } else if (IDNo === "") {
+              alert("Last Name Connot Be Empty");
+              isEmpty = true;
+            } else if (activity === "") {
+              alert("Age Connot Be Empty");
+              isEmpty = true;
+            }
+            return isEmpty;
+          }
+
+          // add Row
+          function addHtmlTableRow() {
+            // get the table by id
+            // create a new row and cells
+            // get value from input text
+            // set the values into row cell's
+            if (!checkEmptyInput()) {
+              var newRow = table.insertRow(table.length),
+                cell1 = newRow.insertCell(0),
+                cell2 = newRow.insertCell(1),
+                cell3 = newRow.insertCell(2),
+                dateEntered = document.getElementById("dateEntered").value,
+                IDNo = document.getElementById("IDNo").value,
+                activity = document.getElementById("activity").value;
+
+              cell1.innerHTML = dateEntered;
+              cell2.innerHTML = IDNo;
+              cell3.innerHTML = activity;
+              // call the function to set the event to the new row
+              selectedRowToInput();
+            }
+          }
+
+          // display selected row data into input text
+          function selectedRowToInput() {
+            for (var i = 1; i < table.rows.length; i++) {
+              table.rows[i].onclick = function () {
+                // get the seected row index
+                rIndex = this.rowIndex;
+                document.getElementById("dateEntered").value =
+                  this.cells[0].innerHTML;
+                document.getElementById("IDNo").value = this.cells[1].innerHTML;
+                document.getElementById("activity").value =
+                  this.cells[2].innerHTML;
+              };
+            }
+          }
+          selectedRowToInput();
+
+          function editHtmlTbleSelectedRow() {
+            var dateEntered = document.getElementById("dateEntered").value,
+              IDNo = document.getElementById("IDNo").value,
+              activity = document.getElementById("activity").value;
+              update =
+            if (!checkEmptyInput()) {
+              table.rows[rIndex].cells[0].innerHTML = dateEntered;
+              table.rows[rIndex].cells[1].innerHTML = IDNo;
+              table.rows[rIndex].cells[2].innerHTML = activity;
+              table.rows[rIndex].cells[3].innerHTML = update;
+            }
+          }
+
+          function removeSelectedRow() {
+            table.deleteRow(rIndex);
+            // clear input text
+            document.getElementById("dateEntered").value = "";
+            document.getElementById("IDNo").value = "";
+            document.getElementById("activity").value = "";
+          }
+        </script>
+      </main>
+
+      <footer><small>Copyright@LionClubAMT.COM</small></footer>
+    </div>
+  </body>
+</html>
