@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <!-- <link rel="stylesheet" href="./form.css" /> -->
+    <!-- styling of the form has been done here. -->
+    <style>
+      :root {
+        --themeColor: white;
+      }
+
+      h1 {
+        color: var(--themeColor);
+        text-align: center;
+      }
+      /* for aligning of elements */
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background-color: hsl(102, 63%, 60%);
+      }
+
+      h3 {
+        color: var(--themeColor);
+        font-weight: bolder;
+      }
+
+      label,
+      h2 {
+        color: var(--themeColor);
+      }
+      label {
+        margin-left: 5%;
+      }
+      input {
+        width: 85%;
+        border-radius: 0.5rem;
+        height: 2rem;
+      }
+      .forms {
+        display: flex;
+        border: 50px;
+      }
+      /* here we have done styling common to both the section */
+      .forms--section {
+        height: 30rem;
+        margin: 2rem 1rem;
+        background-color: hsl(145, 100%, 25%);
+        margin: auto 2rem;
+        padding: 1.75rem;
+        border-radius: 1.25rem;
+        border: 10px solid hsl(115, 18%, 88%);
+      }
+
+      .calc--text {
+        margin: auto 20%;
+        font-weight: bolder;
+        font-size: xx-large;
+      }
+      /* styling of the button has been done here. */
+      .btn {
+        color: black;
+        background-color: var(--themeColor);
+        padding: 0.2rem 1rem;
+        cursor: pointer;
+        display: inline-block;
+        border: none;
+        border-radius: 0.24rem;
+        font-weight: bolder;
+        width: 12rem;
+      }
+
+      .register {
+        width: 14rem;
+      }
+
+      .result {
+        width: 21rem;
+      }
+      .result--text {
+        margin-left: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="forms">
+      <!-- This is section for the calculator form. -->
+      <div class="forms--section register">
+        <h2 class="calc--text">Calculator</h2>
+        <h3>Register</h3>
+        <form action="">
+          <label for="Fullname">Fullname:</label> <br />
+          <input type="text" id="Fullname" /> <br />
+          <br />
+          <label for="YearSection">Year&Section:</label>
+          <br />
+          <input type="text" id="YearSection" />
+          <br />
+          <br />
+          <br />
+          <label for="Number1">Number 1</label>
+          <br />
+          <input type="number" id="Number1" />
+          <br />
+          <br />
+
+          <label for="Number2">Number 2</label>
+          <br />
+          <input type="number" id="Number2" />
+          <br />
+          <br />
+          <button class="btn" type="button" onclick="calculate()">
+            submit
+          </button>
+        </form>
+      </div>
+      <!-- here we have the result section of the form -->
+      <div class="forms--section result">
+        <h3 class="result--text">Result:</h3>
+        <form action="">
+          <label for="Fullname">Fullname:</label> <br />
+          <input type="text" id="Fullname2" /> <br />
+          <br />
+          <label for="add">Addition:</label>
+          <br />
+          <input type="number" id="add" />
+          <br />
+          <br />
+          <label for="sub">Subtraction:</label>
+          <br />
+          <input type="number" id="sub" />
+          <br />
+          <br />
+          <label for="multiply">Multiplication:</label>
+          <br />
+          <input type="number" id="multiply" />
+          <br />
+          <br />
+          <label for="divide">Division:</label>
+          <br />
+          <input type="number" id="divide" />
+          <br />
+          <br />
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // function called after values have been entered.
+      function calculate() {
+        // we are extracting the values from the dom from here
+        const num1 = document.getElementById("Number1");
+        const num2 = document.getElementById("Number2");
+        const name = document.getElementById("Fullname");
+
+        let add = document.getElementById("add");
+        let sub = document.getElementById("sub");
+        let multiply = document.getElementById("multiply");
+        let divide = document.getElementById("divide");
+        let name2 = document.getElementById("Fullname2");
+        // major portion of the values are assigned here. calculations have been done here.
+        add.value = Number(num1.value) + Number(num2.value);
+        sub.value = Number(num1.value) - Number(num2.value);
+        divide.value = Number(num1.value) / Number(num2.value);
+        multiply.value = Number(num1.value) * Number(num2.value);
+        name2.value = name.value;
+      }
+    </script>
+  </body>
+</html>

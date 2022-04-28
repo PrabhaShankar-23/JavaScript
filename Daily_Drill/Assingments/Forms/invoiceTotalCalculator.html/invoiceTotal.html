@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Total Calculator</title>
+    <style>
+      /* Style for the whole body ie the box size 
+        Note here we have tried to make this responsive by using relative units. */
+      body {
+        border: 5px solid blue;
+        width: 70%;
+        max-width: 50rem;
+      }
+      /* main heading of the box */
+      h1 {
+        color: blue;
+        text-align: center;
+      }
+      form {
+        margin-left: 10%;
+        margin-bottom: 10%;
+      }
+      input,
+      select {
+        text-align: left;
+        clear: both;
+        float: right;
+        margin-right: 16rem;
+        /* margin-right: 40%; */
+        max-width: 16rem;
+      }
+      /* for uniforming the lengths of the box.
+ */
+      select {
+        width: 11.25rem;
+      }
+      input {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Invoice Total Calculator</h1>
+    <form action="">
+      <label for="">Customer Type :</label>
+      <!-- I have included the required customer names from here you can change this as per your requirement -->
+      <select id="Customer" name="Customer">
+        <option value="Regular">Regular</option>
+        <option value="Random">Random</option>
+        <option value="one time">one time</option>
+        <option value="Special">Special</option>
+      </select>
+      <br />
+      <br />
+      <!-- NOw the respective entries as per required form -->
+      <label for="subtotal">Invoice Subtotal</label>
+
+      <input type="number" id="subtotal" />
+      <br />
+      <br />
+
+      <label for="date">Invoice Date</label>
+
+      <input type="date" id="date" />
+      <br />
+      <br />
+      <hr />
+      <label id="per" for="percent">Discount percent</label>
+
+      <input type="percent" id="percent" />
+      <span>%</span>
+      <br />
+
+      <br />
+
+      <label for="discount">Discount Amount</label>
+
+      <input type="number" id="discount" />
+      <br />
+      <br />
+      <label for="invoiceTotal">Invoice Total</label>
+
+      <input type="number" id="invoiceTotal" />
+      <br />
+      <br />
+      <label for="date">Due Date</label>
+
+      <input type="date" id="date" />
+      <br />
+      <br />
+
+      <div>
+        <button
+          style="margin-left: 10.5rem"
+          type="button"
+          onclick="calculate()"
+        >
+          calculate
+        </button>
+        <!-- inline styling to maintain the distance between the buttons -->
+        <button style="margin-left: 1rem">Clear Entries</button>
+      </div>
+    </form>
+    <script>
+      // to do the required calculations over here.
+      function calculate() {
+        const subtotal = document.getElementById("subtotal");
+        const discount = document.getElementById("percent");
+
+        let amountdiscount = document.getElementById("discount");
+        let invoiceTotal = document.getElementById("invoiceTotal");
+        console.log(subtotal.value, discount.value);
+        // to.fixed value is used here from to get the 2 decimals.
+        amountdiscount.value = (subtotal.value * 0.01 * discount.value).toFixed(
+          2
+        );
+        invoiceTotal.value = (subtotal.value - amountdiscount.value).toFixed(2);
+      }
+    </script>
+  </body>
+</html>
