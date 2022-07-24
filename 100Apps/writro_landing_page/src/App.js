@@ -3,6 +3,7 @@ import './App.css';
 import "./style/readWrite.css"
 import "./style/read.css"
 import "./style/mobile.css"
+import "./style/footer.css"
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Read_write from './components/Read_write';
@@ -18,7 +19,7 @@ function App() {
       <Read_write/>
       <Read/>
       <Mobile/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }
