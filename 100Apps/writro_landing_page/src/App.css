@@ -246,12 +246,19 @@ body {
   border-radius: 50%;
 }
 
-.elipse2 {
-  position: absolute;
+/* .elipse2 {
+  
   width: 414px;
   height: 414px;
-  left: 1277px;
+  left: 1180px;
   top: 191px;
   border-radius: 50%;
   background: rgba(217, 158, 130, 0.8);
+  overflow: hidden;
+} */
+
+.elipse2 {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 592px;
 }

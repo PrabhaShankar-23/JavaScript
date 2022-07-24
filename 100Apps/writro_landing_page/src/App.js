@@ -14,7 +14,7 @@ function App() {
       <Hero/>
       <Read_write/>
       <Read/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }
