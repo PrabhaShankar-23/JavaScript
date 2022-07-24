@@ -13,7 +13,7 @@ body {
 /* =============== styling for Read-write =============== */
 
 .read--write {
-    position: relative;
+    /* position: relative; */
     display: flex;
     /* flex-direction: row; */
     flex-direction: row;
@@ -22,7 +22,7 @@ body {
 
 .writro {
 
-    position: absolute;
+    /* position: absolute; */
     width: 321px;
     height: 42px;
     left: 116px;
@@ -38,15 +38,16 @@ body {
 }
 
 .read--section {
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     /* flex-direction: row; */
-    align-items: center;
+    align-items: flex-start;
+    margin-left: 116px;
 }
 
 .writeUp {
-    position: absolute;
+    /* position: absolute; */
     width: 559px;
     height: 210px;
     left: 116px;
@@ -61,7 +62,7 @@ body {
 }
 
 .btn--read--write {
-    position: absolute;
+    /* position: absolute; */
     width: 280px;
     height: 65px;
     left: 116px;
@@ -75,38 +76,39 @@ body {
 }
 
 .imgColumn {
-    position: relative;
+    /* position: relative; */
     display: flex;
-    margin-left: 50rem;
+    margin-left: 1rem;
     flex-direction: column;
     align-items: center;
 }
 
 .chart2 {
-    position: absolute;
-    left: 56.94%;
-    right: 14.86%;
-    top: 29.3%;
-    bottom: 60.5%;
+    /* position: absolute; */
+    margin-top: 9rem;
+    margin-left: 174px;
+    width: 361px;
 }
 
 .creditCard {
 
     position: absolute;
 
-    margin-top: 16rem;
-    margin-left: 41px;
+    margin-top: 23rem;
+    margin-left: -433px;
 }
 
 .vector1 {
     position: absolute;
-    margin-top: 6rem;
-    margin-left: 867px;
+    margin-top: 224px;
+    margin-left: -39px;
+    z-index: 1;
 }
 
 .vector2 {
     position: absolute;
-    margin-top: 11rem;
-    margin-left: 791px;
+    margin-top: 280px;
+    margin-left: -47px;
+    /* z-index: -1; */
 
 }
