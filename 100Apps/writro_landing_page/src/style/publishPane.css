@@ -118,4 +118,6 @@
 .btn--details {
     border: none;
     margin-left: -6px;
+    width: 169px;
+    height: 40px;
 }
