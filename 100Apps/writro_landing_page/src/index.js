@@ -7,6 +7,7 @@ import Login from './components/Login';
 import {BrowserRouter as Router,Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import PublishPane from './components/PublishPane'
 
 
 
@@ -17,11 +18,10 @@ root.render(
      <Router>
      <Navbar/>
      <Routes>
-
      <Route path='/' element= { <App />}/>
      <Route path='/Login' element= { <Login />}/>
+     <Route path='/publish' element= {<PublishPane/>}/>
      <Route path='*' element= { <App />}/>
-
      </Routes>
      {/* <App /> */}
       <Footer/>

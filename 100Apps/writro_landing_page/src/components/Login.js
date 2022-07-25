@@ -1,8 +1,11 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useState } from 'react';
 
+
 const Login = () => {
+
+const navigate = useNavigate()
 const [logged, setLogged] = useState(false);
 const [loginDetails, setLoginDetails] = useState({
   userEmail : null,
@@ -12,7 +15,8 @@ const [loginDetails, setLoginDetails] = useState({
    const handleClick = () => {
     setLogged(!logged);
     if(loginDetails.userEmail && loginDetails.password){
-      console.log('logged in');
+      // console.log('logged in');
+      navigate('/publish');
     }
   }
 
@@ -38,7 +42,7 @@ const [loginDetails, setLoginDetails] = useState({
       })    
          
     }
-   console.log(loginDetails);
+  //  console.log(loginDetails);
   }
 
   return (

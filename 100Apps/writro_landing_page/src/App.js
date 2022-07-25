@@ -5,6 +5,7 @@ import "./style/read.css"
 import "./style/mobile.css"
 import "./style/footer.css"
 import "./style/login.css"
+import "./style/publishPane.css"
 
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
@@ -21,8 +22,7 @@ function App() {
    
       <div className="App">
       {/* <Navbar/> */}
-      <Hero/>
-     
+      <Hero/>     
       <Read_write/>
       <Read/>
       <Mobile/>

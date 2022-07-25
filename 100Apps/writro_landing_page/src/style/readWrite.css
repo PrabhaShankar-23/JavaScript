@@ -73,6 +73,7 @@ body {
     color: white;
     border: none;
     font-weight: 900;
+    cursor: pointer;
 }
 
 .imgColumn {

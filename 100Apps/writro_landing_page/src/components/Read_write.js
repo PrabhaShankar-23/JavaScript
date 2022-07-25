@@ -1,13 +1,22 @@
 import React from 'react'
+import {Link, useNavigate} from 'react-router-dom'
 
 const Read_write = () => {
+
+  const handleClick = () => {
+    window.scroll(0,0);
+  };
   return (
     
      <div className='read--write' >
         <section className='read--section'>
             <p className='writro'>Writro Writer</p>
             <p className='writeUp'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum porttitor duis nec leo ac. Natoque et sapien quisque mauris tempor, sapien accumsan. Nibh metus scelerisque dolor rhoncus est amet auctor.</p>
-            <button className='btn--read--write'> Let's Write <span>&#8594;</span> </button>
+            <Link to="/Login">            
+            <button 
+            onClick={handleClick}
+            className='btn--read--write'> Let's Write <span>&#8594;</span> </button>
+            </Link>
         </section>
         <section >
         <img 

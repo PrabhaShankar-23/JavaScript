@@ -1,4 +1,6 @@
 import React from 'react'
+import {Link, useNavigate} from 'react-router-dom'
+import { useState } from 'react';
 
 const Hero = () => {
   return (
@@ -16,7 +18,11 @@ const Hero = () => {
             <span>Write on the go with<span className='primary--color'>WRITRO</span>,</span>
         </p>
         <section className='btn--headers' >
-            <button className='btn--publishing--reading'> Start Publishing</button>
+      <Link to="/Login">
+      
+      <button className='btn--publishing--reading'> Start Publishing</button>
+      </Link>
+            
             <button className='btn--publishing--reading'> Start Reading</button>
         </section>
     </section>  
