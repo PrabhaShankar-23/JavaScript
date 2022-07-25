@@ -1,10 +1,50 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import { useState } from 'react';
 
 const Login = () => {
+const [logged, setLogged] = useState(false);
+const [loginDetails, setLoginDetails] = useState({
+  userEmail : null,
+  password : null,
+})
+
+   const handleClick = () => {
+    setLogged(!logged);
+    if(loginDetails.userEmail && loginDetails.password){
+      console.log('logged in');
+    }
+  }
+
+  const handleDetails = (e) => {
+   
+    if(e.target.id ==='email'){
+      setLoginDetails((loginDetails) => {
+        return (
+          { ...loginDetails,
+             userEmail :e.target.value,
+          }
+        )
+      })    
+         
+    }
+    if(e.target.id ==='password'){
+      setLoginDetails((loginDetails) => {
+        return (
+          { ...loginDetails,
+             password :e.target.value,
+          }
+        )
+      })    
+         
+    }
+   console.log(loginDetails);
+  }
+
   return (
     <div className='login'>
-        <section className='login--logo--section'>
-            <p className='loginText'>Login</p>
+        <section className='login--logo--section'>       
+            <p className='loginText'>Login</p>                  
             <section className='contact--logos'>
                 <img className='imglogo google' src=".\img\google-sign-in.png" alt="google mail" />
                 <img className='imglogo facebook' src=".\img\facebook-sign-in.png" alt="facebook" />
@@ -17,6 +57,7 @@ const Login = () => {
             type="email" 
             id="email" 
             placeholder='Enter your email or username'
+            onChange={handleDetails}
 
             name="email"></input>
             <section className='grey'></section>
@@ -26,11 +67,15 @@ const Login = () => {
             id="password" 
             placeholder=' Enter your password'           
             name="password"
+            onChange={handleDetails}
             ></input>
             <section className='grey'></section>
 
             <p className='forgot--password'>Forgot Password?</p>
-            <button className='btn--login'>LOGIN</button>
+            <button 
+            onClick = {handleClick}
+            className='btn--login'
+            >LOGIN</button>
         </section>
         <section>
 

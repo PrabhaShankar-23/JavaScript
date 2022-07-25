@@ -13,19 +13,22 @@ import Read from './components/Read';
 import Footer from './components/Footer';
 import Mobile from './components/Mobile';
 import Login from './components/Login';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
+   
+      <div className="App">
+      {/* <Navbar/> */}
       <Hero/>
-      <Login/>
+     
       <Read_write/>
       <Read/>
       <Mobile/>
-      <Footer/>
-    </div>
+      {/* <Footer/> */}
+    </div>    
+    
   );
 }
 

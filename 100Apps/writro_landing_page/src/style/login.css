@@ -7,6 +7,7 @@
 .pana {
     width: 649px;
     height: 590px;
+    margin-top: 43px;
 }
 
 .loginText {
@@ -63,6 +64,8 @@
     justify-content: space-around;
     margin-left: 1rem;
     margin-top: 41px;
+    cursor: pointer;
+    align-items: center;
 }
 
 .grey {
