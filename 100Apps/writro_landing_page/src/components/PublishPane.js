@@ -1,6 +1,50 @@
 import React from 'react'
+import {Link, useNavigate} from 'react-router-dom'
+import { useState } from 'react';
 
-const publishPane = () => {
+
+const PublishPane = () => {
+
+const navigate = useNavigate()
+const [published, setPublished] = useState(false);
+const [publishDetails, setPublishDetails] = useState({
+  bookTitle : null,
+  author : null,
+})
+
+   const handleClick = () => {
+    setPublished(!published);
+    if(publishDetails.bookTitle && publishDetails.author){
+    //   console.log('published in');
+      navigate('/');
+    }
+  }
+
+  const handleDetails = (e) => {
+   
+    if(e.target.id ==='book'){
+      setPublishDetails((publishDetails) => {
+        return (
+          { ...publishDetails,
+             bookTitle :e.target.value,
+          }
+        )
+      })    
+         
+    }
+    if(e.target.id ==='name'){
+      setPublishDetails((publishDetails) => {
+        return (
+          { ...publishDetails,
+             author :e.target.value,
+          }
+        )
+      })    
+         
+    }
+//    console.log(publishDetails);
+  }
+
   return (
     <div className='publishTitle'>
         <section className='publisherDetails'>
@@ -15,7 +59,7 @@ const publishPane = () => {
                 type="text" 
                 id="book" 
                 placeholder='Enter your book’s name'
-                // onChange={handleDetails}
+                onChange={handleDetails}
 
                 name="book">
 
@@ -31,12 +75,12 @@ const publishPane = () => {
             placeholder='Enter your name'           
             name="name"
             className='publish--booktitle btn-publish'
-            // onChange={handleDetails}
+            onChange={handleDetails}
             ></input>
             <section className='grey publishLine'></section>
             
             <button 
-            // onClick = {handleClick}
+            onClick = {handleClick}
             className='btn--login btn--details'
             >Save the Details</button>
         </section>
@@ -48,4 +92,4 @@ const publishPane = () => {
   )
 }
 
-export default publishPane
+export default PublishPane
