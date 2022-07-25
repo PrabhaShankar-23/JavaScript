@@ -1,0 +1,33 @@
+let colour1 = '#f8e71c';
+ colour1 = colour1.substring(1);
+
+console.log("cutting shutting",colour1);
+//  colour1 = colour1.slice(2);
+//  colour1 = colour1.splice(2);
+
+// console.log("cutting shutting slice",colour1);
+
+const hexToDecimal = hex => parseInt(hex, 16);
+
+const color67 = hexToDecimal(16);
+
+console.log("color agya",color);
+console.log("color agya2", hexToDecimal(colour1));
+
+const color = () => {
+      let colour1 = collegeProfile?.primary_color;
+      let colour2 = data?.primary_color;
+      const hexToDecimal = hex => parseInt(hex, 16);
+      colour1 = colour1?.substring(1);
+      colour2 = colour2?.substring(1);
+
+      const one =  hexToDecimal(colour1); 
+      const two = hexToDecimal(colour2);
+
+      console.log("Rangoon k Rang mein", one == two );
+      console.log("Rangoon k Rang mein", one, two);
+      console.log("Rangoon k Rang mein data base",collegeProfile?.primary_color, data?.primary_color);
+  };
+
+  color();
+         
