@@ -24,10 +24,10 @@ function App() {
    
       <div className="App">
       {/* <Navbar/> */}
-      <Cover/>
-      {/* <Hero/>      */}
-      {/* <Read_write/> */}
-      {/* <Read/> */}
+      {/* <Cover/> */}
+      <Hero/>     
+      <Read_write/>
+      <Read/>
       <Mobile/>
       {/* <Footer/> */}
     </div>    

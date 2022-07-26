@@ -1,22 +1,23 @@
 import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { useState } from 'react';
+import Cover from './Cover';
 
 
 const PublishPane = () => {
 
 const navigate = useNavigate()
-const [published, setPublished] = useState(false);
+const [published, setPublished] = useState(true);
 const [publishDetails, setPublishDetails] = useState({
   bookTitle : null,
   author : null,
 })
 
    const handleClick = () => {
-    setPublished(!published);
-    if(publishDetails.bookTitle && publishDetails.author){
-    //   console.log('published in');
-      navigate('/');
+     if(publishDetails.bookTitle && publishDetails.author){
+      setPublished(!published);
+      // console.log('published in');
+      // navigate('/');
     }
   }
 
@@ -46,6 +47,9 @@ const [publishDetails, setPublishDetails] = useState({
   }
 
   return (
+
+    <>
+    published ? (
     <div className='publishTitle'>
         <section className='publisherDetails'>
         <section className='backbutton'>
@@ -88,7 +92,12 @@ const [publishDetails, setPublishDetails] = useState({
             <img src=".\img\bro.png" alt="writer task" />
         </section>
         
-     </div>
+     </div>) : (<Cover/>)   
+    
+    
+    
+    </>
+    
   )
 }
 
