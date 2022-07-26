@@ -5,14 +5,14 @@ import { useState } from 'react';
 
 const Login = () => {
 
-const navigate = useNavigate()
+const navigate = useNavigate();
 const [logged, setLogged] = useState(false);
 const [loginDetails, setLoginDetails] = useState({
   userEmail : null,
   password : null,
-})
+});
 
-   const handleClick = () => {
+const handleClick = () => {
     setLogged(!logged);
     if(loginDetails.userEmail && loginDetails.password){
       // console.log('logged in');

@@ -6,6 +6,7 @@ import "./style/mobile.css"
 import "./style/footer.css"
 import "./style/login.css"
 import "./style/publishPane.css"
+import "./style/cover.css"
 
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
@@ -15,6 +16,7 @@ import Footer from './components/Footer';
 import Mobile from './components/Mobile';
 import Login from './components/Login';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Cover from './components/Cover';
 
 
 function App() {
@@ -22,9 +24,10 @@ function App() {
    
       <div className="App">
       {/* <Navbar/> */}
-      <Hero/>     
-      <Read_write/>
-      <Read/>
+      <Cover/>
+      {/* <Hero/>      */}
+      {/* <Read_write/> */}
+      {/* <Read/> */}
       <Mobile/>
       {/* <Footer/> */}
     </div>    
